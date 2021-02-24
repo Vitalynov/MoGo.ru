@@ -1,0 +1,135 @@
+//Миксины
+@import '_help_scss/mixins/normalize';
+@import '_help_scss/mixins/container';
+@import '_help_scss/mixins/adaptiv-font';
+
+/*Шрифты: */
+
+/*'Roboto'*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+// font-family: 'Roboto', sans-serif;
+
+/*'Kaushan Script'*/
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+// font-family: 'Kaushan Script', cursive;
+
+/*'Montserrat'*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+// font-family: 'Montserrat', sans-serif;
+
+//Переменные
+//Градиент
+$gradientOld: rgb(243, 129, 129); /* Old browsers */
+$gradientMoz: -moz-linear-gradient(
+	top,
+	rgba(243, 129, 129, 0.9) 0%,
+	rgba(252, 227, 138, 0.9) 100%
+);
+$gradientWebkit: -webkit-linear-gradient(
+	top,
+	rgba(243, 129, 129, 0.9) 0%,
+	rgba(252, 227, 138, 0.9) 100%
+);
+$gradient: linear-gradient(
+	to bottom,
+	rgba(243, 129, 129, 0.9) 0%,
+	rgba(252, 227, 138, 0.9) 100%
+);
+$filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a',GradientType=0 );
+
+//Цвета
+$green: #95e1d3;
+$pink: rgba(243, 129, 129, 0.9);
+
+//Максимальная ширина контента для мексина adaptiv-font.
+$maxWidth: 1200;
+
+.body {
+	font-family: 'Roboto', sans-serif;
+}
+.fas {
+	font-size: 22px;
+	color: #ccc;
+}
+.wrapper {
+	overflow: hidden;
+	min-height: 100vh;
+}
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	@include container($maxWidth);
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	@include adaptiv-font(150, 50);
+	font-size: 150px;
+	line-height: 140px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	color: #ffffff;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333333;
+	&::after {
+		content: '';
+		display: block;
+		width: 60px;
+		height: 3px;
+		background-color: #f38181;
+		margin: 40px auto 0;
+	}
+}
+.uptitel-h2 {
+	font-family: 'Kaushan Script', cursive;
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 400;
+	color: #333;
+	margin: 0 0 22px 0;
+}
+
+.titele {
+	display: block;
+	width: 345px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+	& > img {
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+// Основные блоки
+@import 'header/header';
+@import 'main/main';
+@import 'footer/footer';

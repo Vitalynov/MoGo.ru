@@ -1,0 +1,156 @@
+/*Main block*/
+
+//пример внесения миксина адаптивного шрифта и контейнера
+// .box p {
+//     @include adaptiv-font(16, 10);
+//     @include container (1170px)
+// }
+.baner {
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: $gradientOld;
+		background: $gradientMoz;
+		background: $gradientWebkit;
+		background: $gradient;
+		filter: $filter;
+		z-index: 5;
+	}
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100vh;
+		z-index: 1;
+		& > img {
+			width: 100%;
+			min-height: 100vh;
+			object-fit: cover;
+		}
+	}
+	&__container {
+		min-height: 100vh;
+		position: relative;
+		//padding: 0 0 87% 0;
+	}
+	&__content {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 50;
+	}
+}
+
+.content {
+	&__uptitele {
+		font-size: 72px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #fff;
+		margin: 0 0 11% 0;
+	}
+	&__titele {
+		margin: 0 0 17% 0;
+	}
+	&__btn {
+		position: relative;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #fff;
+		padding: 10px 30px;
+		border: 3px solid #fff;
+		cursor: pointer;
+		&::before {
+			content: '';
+			position: absolute;
+			top: -70px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			height: 3px;
+			background-color: #fff;
+		}
+	}
+}
+
+.slider {
+	&-rowe {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		justify-content: space-between;
+		z-index: 50;
+	}
+	&__item {
+		flex: 0 1 23%;
+		position: relative;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #ffffff;
+		opacity: 0.7;
+		margin: 25px 0 25px 0;
+		& > span {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 24px;
+			line-height: 1.2;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: #ffffff;
+			opacity: 0.7;
+		}
+		&::before {
+			content: '';
+
+			display: inline-block;
+			width: 100%;
+			height: 3px;
+			background-color: #fff;
+			margin: 0 0 25px 0;
+		}
+	}
+}
+.item-red {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 25%;
+		height: 3px;
+		background-color: #f38181;
+
+		z-index: 55;
+	}
+}
+
+@import './modules-scss/1.about';
+@import './modules-scss/2.services';
+@import './modules-scss/3.devices';
+@import './modules-scss/4.wedo';
+@import './modules-scss/5.team';
+@import './modules-scss/6.work';
+@import './modules-scss/7.say';
+@import './modules-scss/8.blog';
+@import './modules-scss/9.map';

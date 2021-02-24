@@ -1,0 +1,62 @@
+.map {
+	position: relative;
+	max-width: 100%;
+    height: 21.2vh;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 5;
+    }
+
+	&__img {
+		width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+        align-items: center;
+        z-index: 10;
+		&__icon {
+            width: 20px;
+            height: 26px;
+            overflow: hidden;
+            margin: 0 0 18px 0;
+            &>img{
+                width: 100%;
+                object-fit: cover;
+            }
+		}
+		&__text {
+            //position: relative;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 24px;
+			font-weight: 700;
+			text-transform: uppercase;
+            color: $pink;
+            cursor: pointer;
+            
+            &::after{
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background-color: $pink;
+                margin: 20px auto 0 auto;
+                z-index: 10;
+
+            }
+		}
+	}
+}
